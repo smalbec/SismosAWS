@@ -1,6 +1,0 @@
-#Formato en el que los datos dados por POST deben ser subidos al bucket S3 para que puedan ser rastreados por el Crawler
-{"timestamp":1576911981,"country":"CA","magnitude":3.6}
-{"timestamp":1462421604,"country":"US","magnitude":3.4}
-{"timestamp":1565756743,"country":"CL","magnitude":5.7}
-{"timestamp":1472525064,"country":"US","magnitude":3.5}
-{"timestamp":1478089484,"country":"AF","magnitude":6.3}
