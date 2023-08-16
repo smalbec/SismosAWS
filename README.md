@@ -29,9 +29,8 @@ Conversion notes:
 
 
 1. Disponibilidad de un método para enviar solicitudes de API (por ejemplo, Postman).
-2. Configuración previa de roles y permisos necesarios para interactuar con los servicios de AWS mencionados.
-3. Formato esperado de las solicitudes GET (según Código 1).
-4. Formato esperado de las solicitudes POST y de su body (según Código 2).
+2. Formato esperado de las solicitudes GET (según Código 1).
+3. Formato esperado de las solicitudes POST y de su body (según Código 2).
 
 **Pasos de Implementación**:
 
@@ -67,13 +66,13 @@ Conversion notes:
     * Confirmar la comunicación de Lambda con Athena y la devolución de resultados.
     * Confirmar restricción con solicitudes no posibles para el sistema. 
 
-**Restricción de Memoria:** Se implementaron medidas y servicios para cumplir con la restricción de cargar/filtrar/devolver un máximo de 100 registros en memoria. Se utilizó AWS Glue para rastrear y cargar datos desde S3 a una base de datos en AWS Athena, donde las consultas SQL se limitaron a 100 registros. La función Lambda interactúa con Athena para realizar consultas y entregar resultados a los usuarios.El método POST se restringe a través de un Request Validator que utiliza un JSON Schema para solo permitir 100 máximos elementos en el body.
+**Restricción de Memoria:** Se implementaron medidas y servicios para cumplir con la restricción de cargar/filtrar/devolver un máximo de 100 registros en memoria. Se utilizó AWS Glue para rastrear y cargar datos desde S3 a una base de datos en AWS Athena, donde las consultas SQL se limitaron a 100 registros. La función Lambda interactúa con Athena para realizar consultas y entregar resultados a los usuarios. El método POST se restringe a través de un Request Validator que utiliza un JSON Schema para solo permitir 100 máximos elementos en el body.
 
 **API Endpoint**: **[https://wuje0z8cxc.execute-api.sa-east-1.amazonaws.com/default/seisms](https://wuje0z8cxc.execute-api.sa-east-1.amazonaws.com/default/seisms)**
 
 **Codigo 1**: Ejemplo y formato de request GET 
 
-https://wuje0z8cxc.execute-api.sa-east-1.amazonaws.com/default/seisms?**country=US&dateLower=2013-01-01&dateUpper=2023-08-15&magnitudeLower=3.0&magnitudeHigher=8.0&skip=0**
+https://wuje0z8cxc.execute-api.sa-east-1.amazonaws.com/default/seisms?country=US&dateLower=2013-01-01&dateUpper=2023-08-15&magnitudeLower=3.0&magnitudeHigher=8.0&skip=0
 
 **Codigo 2**: Ejemplo y formato de request POST y su body
 
